@@ -1,7 +1,15 @@
 $(document).ready(function () {
-    $("#library").on("click", initMap)
-    $("#restaurant").on("click", initMap)
-    $("#coffee-shop").on("click", initMap)
+    $("#library").on("click", function(){
+        initMap('library');
+    })
+    $("#restaurant").on("click", function(){
+        initMap('restaurant');
+    })
+    $("#coffee-shop").on("click", function(){
+        initMap('coffee-shop');
+    })
+   
+
     var libraryMarker = [{
             coords: {
                 lat: 30.2659,
@@ -110,10 +118,14 @@ $(document).ready(function () {
             content: 'Cuppa Austin'
         }
     ];
-
+    var markersObject = {
+        library: libraryMarker,
+        "coffee-shop": coffeeShopMarker,
+        restaurant: RestaurantMarker
+    };
     var map;
 
-    function initMap() {
+    function initMap(maptype) {
         var options = {
             zoom: 10,
             center: {
@@ -124,8 +136,9 @@ $(document).ready(function () {
         var map = new google.maps.Map(document.getElementById('map'), options);
 
 
-        for (var i = 0; i < coffeeShopMarker.length; i++) {
-            addMarker(coffeeShopMarker[i]);
+        for (var i = 0; i < markersObject[maptype].length; i++) {
+
+            addMarker(markersObject[maptype][i]);
         }
 
         function addMarker(props) {
@@ -143,9 +156,11 @@ $(document).ready(function () {
                     infoWindow.open(map, marker);
                 });
                 // NOT WORKING!!
-                // marker.addListener('mouseleave',function(){
-                // infoWindow.close(map,marker);
-                // });
+                marker.addListener('mouseout',function(){
+                    infoWindow.close(map, marker);
+                    // setTimeout(infoWindow.close, 4000, map, marker);
+                    console.log("mouseleave has occurred");
+                });
 
             }
         }
