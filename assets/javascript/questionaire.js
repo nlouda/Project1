@@ -1,54 +1,224 @@
-  // Initialize Firebase
-  var config = {
-      apiKey: "AIzaSyD96eOR5BLQPgz8RKKblfL7Eillmiwn4jI",
-      authDomain: "project1-2556e.firebaseapp.com",
-      databaseURL: "https://project1-2556e.firebaseio.com",
-      projectId: "project1-2556e",
-      storageBucket: "project1-2556e.appspot.com",
-      messagingSenderId: "378894157269"
-  };
-  firebase.initializeApp(config);
+$(document).ready(function () {
 
-  //Pseudo code::
-  //problem1: Present user with 3 questions with 3 answers to each question
+    // setTimeout(function () {
 
-  //numbers that the answers will add up to to identify desired location:
-  // libary (3-5)
-  // coffee (6-7)
-  // bar (8-9)
+    // });
 
-  //Q1: How would you describle your personality? 
-  //1. introvert (1 points)
-  //2. introvert but like to party sometime (2 points)
-  //3. extrovert (3 points)
-
-  //Q2: What would you like to have while you are study? 
-  //1. no food distraction (1 point)
-  //2. coffee (2 points)
-  //3. beer (3 points)
-
-  //Q3: At your study location: are you going to need external resources handy? (books/ magazines/ charger outlets) 
-  //1. Yes! I will definitely need external resources handy!  (1 points)
-  //2. Maybe! I may need an outlet or two!(2 points)
-  //3. Nope,,, I just want to party! \^~^/ (3 points)
+    // hiding the HTML content
+    $(".hideallofit").hide();
+    // when start button is pressed, the 1st question appears
+    $("#start").on("click", function () {
+        $("#start, #startuppage").hide();
+        $("#question1").show();
+        event.preventDefault();
+        // $("submitbutton1").click()
 
 
-  //problem 2: CODING LOGIC: questions with answers that will add up to a specific number that will identify a desired study locations
-  //1)assign answer 1 to be worth 1point, answ.2 to be worth 2points & answ.3 to be worth 3points.
+
+    });
+
+    //tried something like this but not working for some reason
+    // document.getElementById("form1").onsubmit = function () {
+    //     var option = document.querySelector('input[name = "q1"]:checked').value;
+
+    //     document.getElementById("#desiredLoc").innerHTML = option;
+    //     $("#desiredLoc").text(option);
+    //     console.log(option);
 
 
-  //create three arrays containing 
-  //run a function to add up all the points from all three answers
+    //     return false; // required to not refresh the page
+    // }
 
-  // create "userinput" var. that will gather all 3 answers that the user selected.
+    // when Submit button is pressed, the 2nd question appears
 
-  //using var "userinput", invoke argument into function that 
 
-  //Run if/else if statement to determine which numerical value point range they fall into
+    $("#submitbutton1").on("click", function () {
+        $(".hideallofit").hide();
+        $("#question2").show();
+        event.preventDefault();
 
-  //if answer points is between 3-5
-  //connect to Libary buttom
-  //if answer points is between 6-7
-  //connect to coffee shop buttom
-  //if answer points is between 8-9
-  //connect to bar buttom
+    });
+
+    // when Submit button is pressed, the 2nd question appears
+
+    $("#submitbutton2").on("click", function () {
+        $(".hideallofit").hide();
+        $("#question3").show();
+        event.preventDefault();
+
+    });
+
+    // $("#submitbutton3").on("click", function () {
+    //     $(".hideallofit").hide();
+    //     $("#desiredLoc").show();
+    //     event.preventDefault();
+
+    // });
+    ////////////////////////////////////////////////////////////
+
+    // $("#submitbutton3").on("click", function () {
+    //     var userScoreTotal = $("#totalNumberScore").val();
+    //     console.log(" is the total score" + userScoreTotal);
+
+    //     switch (userScoreTotal) {
+
+
+
+    //         case 3:
+    //         case 4:
+    //         case 5:
+    //             return
+    //             $(".hideallofit").hide();
+    //             $("#showLibrary").show();
+    //             event.preventDefault();
+    //             console.log("3 4 5 ");
+
+
+
+    //         case 6:
+    //         case 7:
+    //             return
+    //             $(".hideallofit").hide();
+    //             $("#showCafe").show();
+    //             event.preventDefault();
+    //             console.log("6 7 ");
+
+
+    //         case 8:
+    //         case 9:
+    //             return
+    //             $(".hideallofit").hide();
+    //             $("#showPub").show();
+    //             event.preventDefault();
+    //             console.log("8 9  ");
+
+    //     };
+
+    // });
+
+
+    // var userScoreTotal = $("#totalNumberScore").val();
+
+    // var library = function () {
+
+    //     $(".hideallofit").hide();
+    //     $("#showLibrary").show();
+    //     event.preventDefault();
+
+    // };
+
+    // var cafe = function () {
+    //     event.preventDefault();
+    //     $(".hideallofit").hide();
+    //     $("#showCafe").show();
+
+    // };
+
+    // var pub = function () {
+    //     event.preventDefault();
+    //     $(".hideallofit").hide();
+    //     $("#showPub").show();
+
+    // };
+
+
+    // if (userScoreTotal === 5) {
+    //     library();
+    // }
+
+
+
+
+    /////////////////////////////////////////////////
+    /////////////////
+
+
+    $("#submitbutton3").on("click", function () {
+        var userScoreTotal = $("#totalNumberScore").val();
+
+        var library = function () {
+
+            $(".hideallofit").hide();
+            $("#showLibrary").show();
+            $("#map").show();
+            event.preventDefault();
+
+        };
+
+        var cafe = function () {
+            event.preventDefault();
+            $(".hideallofit").hide();
+            $("#showCafe").show();
+            $("#map").show();
+
+        };
+
+        var pub = function () {
+            event.preventDefault();
+            $(".hideallofit").hide();
+            $("#showPub").show();
+            $("#map").show();
+
+        };
+        //terneray operator
+        userScoreTotal <= 5 ? library() : null;
+        userScoreTotal >= 6 ? cafe() : null;
+        userScoreTotal >= 8 ? pub() : null;
+
+    });
+
+    //     // $(".hideallofit").hide();
+    //     // $("#desiredLoc").show();
+    //     // event.preventDefault();
+    //     // });
+
+
+    //     var userScoreTotal = $("#totalNumberScore").val();
+
+
+
+    //     if (userScoreTotal <= 5) {
+    //         $(".hideallofit").hide();
+    //         $("#showLibrary").show();
+    //         event.preventDefault();
+    //         console.log(userScoreTotal + "library");
+
+    //     } else if (userScoreTotal === 6 || userScoreTotal === 7) {
+    //         $(".hideallofit").hide();
+    //         $("#showCafe").show();
+    //         event.preventDefault();
+    //         console.log("6 7cafe ");
+
+    //     } else if (userScoreTotal >= 8) {
+    //         $(".hideallofit").hide();
+    //         $("#showPub").show();
+    //         event.preventDefault();
+    //         console.log(userScoreTotal + "bar ");
+    //     };
+    // }
+
+
+    //////////////////
+
+
+    function calcscore() {
+        var score = 0;
+        $(".calc:checked").each(function () {
+            // console.log(score);
+            score += parseInt($(this).val(), 10);
+            console.log(score);
+
+
+        });
+        $("input[name=sum]").val(score)
+    }
+    $().ready(function () {
+        $(".calc").change(function () {
+            calcscore()
+        });
+    });
+
+
+
+
+});
