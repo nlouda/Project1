@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Study Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/design.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/javascript/questionaire.js"></script>
+    <script src="assets/app.js"></script>
+</head>
+
+<body>
+    <!-- this is the first initial start up window that will show up-->
+    <div id="startuppage">
+        <h1>Welcome to Study Buddies! \^~^/</h1>
+        <h3>We can help you find an ideal study location! </h3>
+        <h4>Just answer a couple personality/pereference questions first. cool?,,,,,,, cool! \^~^/</h4>
+        <p>(click the "Start" button to begin ^~^)</p>
+        <div class="text-center">
+            <button class="center-block" id="start">Start</button>
+        </div>
+    </div>
+    <!-- <div id="roughdft" class="hideallofit">
+    <h1>Study Guide</h1>
+    <button>Library</button>
+    <button>Bar</button>
+    <Button>Coffee Shop</Button>
+</div> -->
+    <section id="questions section">
+        <!-- this is the 2nd screen that will show with question #1-->
+        <div id="question1" class="hideallofit">
+            <!-- <div id="3radioq1"> -->
+            <p>Q1: How would you describle your personality? </p>
+            <input class="calc" type="radio" name="q1" value="1"> 1. Introvert
+            <br>
+            <input class="calc" type="radio" name="q1" value="2">2. Introvert but like to party sometimes
+            <br>
+            <input class="calc" type="radio" name="q1" value="3">3. Extrovert
+            <br>
+            <!-- </div> -->
+            <input type="submit" id="submitbutton1" value="Next Question">
+        </div>
+        <!-- this is the 3rd screen that will show with question #2-->
+        <div id="question2" class="hideallofit">
+            <p>Q2: What would you like to have while you are study? </p>
+            <input class="calc" type="radio" name="q2" value="1">1. No food distraction
+            <br>
+            <input class="calc" type="radio" name="q2" value="2">2. CoffeeCoffeeCoffeeCoffeeCoffee
+            <br>
+            <input class="calc" type="radio" name="q2" value="3">3. A drink or two for me and you ^~^
+            <br>
+            <input type="submit" id="submitbutton2" value="Final Question">
+        </div>
+        <!-- this is the 4th screen that will show with question #3-->
+        <div id="question3" class="hideallofit">
+            <p>Q3: At your study location: are you going to need external resources handy? (books/ magazines/ charger outlets)</p>
+            <input class="calc" type="radio" name="q3" value="1">1. Yes! I will definitely need external resources handy!
+            <br>
+            <input class="calc" type="radio" name="q3" value="2">2. Maybe! I may need an outlet or two!
+            <br>
+            <input class="calc" type="radio" name="q3" value="3">3. Nope,,, I just want to party! \^~^/
+            <br>
+            <input type="submit" id="submitbutton3" value="Submit preferences">
+        </div>
+
+        <div id="desiredLoc" class="hideallofit">
+            <p>Total Score:</p>
+            <input id="totalNumberScore" type="text" name="sum" />
+        </div>
+
+    </section>
+
+
+    <div id="showLibrary" class="hideallofit">
+        <h1>Based on what you answered, the best place for you to study would be at the Library!!</h1>
+        <button id="library">Library</button>
+
+    </div>
+    <div id="showCafe" class="hideallofit">
+        <h1>Based on what you answered, the best place for you to study would be at a Local Cafe!!</h1>
+        <button id="coffee-shop">Coffee Shop</button>
+
+
+    </div>
+    <div id="showPub" class="hideallofit">
+        <h1>Based on what you answered, the best place for you to study would be at a Local Pub!!</h1>
+        <button id="restaurant">click me to see Pub</button>
+
+    </div>
+    <div id="map" class="hideallofit"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfOuq8-aLtjmS97JJ1SQiuxpcyo5OwtY8" async defer></script>
+
+    <!-- <div>
+        <p id="desiredLoc"></p>
+    </div> -->
+</body>
+
+</html>
