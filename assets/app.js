@@ -1,14 +1,14 @@
 $(document).ready(function () {
-    $("#library").on("click", function(){
+    $("#library").on("click", function () {
         initMap('library');
     })
-    $("#restaurant").on("click", function(){
+    $("#restaurant").on("click", function () {
         initMap('restaurant');
     })
-    $("#coffee-shop").on("click", function(){
+    $("#coffee-shop").on("click", function () {
         initMap('coffee-shop');
     })
-   
+
 
     var libraryMarker = [{
             coords: {
@@ -156,7 +156,7 @@ $(document).ready(function () {
                     infoWindow.open(map, marker);
                 });
                 // NOT WORKING!!
-                marker.addListener('mouseout',function(){
+                marker.addListener('mouseout', function () {
                     infoWindow.close(map, marker);
                     // setTimeout(infoWindow.close, 4000, map, marker);
                     console.log("mouseleave has occurred");
